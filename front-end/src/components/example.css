@@ -1,0 +1,19 @@
+
+
+.bars-background {
+    margin: 1px;
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
+
+}
+
+.bars-valuesintime-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
