@@ -1,4 +1,4 @@
-import BarsGraphic from "./components/example"
+import Bar from "./components/bar/bar.jsx"
 import "./App.css"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   <>
   <div className="app">
-    <BarsGraphic/>
+    <Bar/>
   </div>  
   </>
 

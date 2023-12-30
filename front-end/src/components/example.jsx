@@ -1,5 +1,5 @@
-
-import { useState } from "react"
+import PanicButton from "./PanicButton/PanicButton"
+import { useState,useRef,useEffect } from "react"
 import "./example.css"
 
 const Bar = ({data}) => {
@@ -7,7 +7,7 @@ const Bar = ({data}) => {
 
     return (
 
-        <div>
+        <div className="bar-styles">
             <p>{data.val}</p>
             <div></div>
             <p>{data.date}</p>
@@ -15,6 +15,34 @@ const Bar = ({data}) => {
         </div>
 
     )
+
+}
+
+const CanvasPrueba = ({width,height}) => {
+
+
+   
+
+    const canvasRef = useRef(null);
+    const canvas = canvasRef.current;
+
+    const panicButtonHandleClick = () => {
+
+        console.log([canvasRef,canvas])
+
+    }
+
+    return (
+
+        <>  
+
+            <PanicButton onClick={() => panicButtonHandleClick()}/>
+            <canvas ref={canvasRef}/>
+
+        </>
+
+    )
+
 
 }
 
@@ -26,6 +54,8 @@ const BarsGraphic = ({props}) => {
         {date: "2/5/2012",val: 5},
 
     ];
+
+    
         
         
 
@@ -35,16 +65,28 @@ const BarsGraphic = ({props}) => {
 
         <>
 
+            <PanicButton txt={"boton de panico barsGraphic"} onClick={() => console.log(data)}/>
+
+            <CanvasPrueba width={"150px"} height={"150px"}/>
+
             <div className="bars-background">
 
                 <aside className="bars-valuesintime-container">
 
-                    <p>pepe</p>
-                    <p>pepe</p>
-                    <p>pepe</p>
-                    <p>pepe</p>
-
+                    <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    </ul>
+                    
                 </aside>
+
+                <div className="bars-barsContainer">
+
+                    <Bar data={data[0]}/>
+
+                </div>
 
             </div>
 
