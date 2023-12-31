@@ -1,4 +1,4 @@
-import Bar from "./components/bar/bar.jsx"
+import Debugging from "./components/Debugging/Debugging.jsx"
 import "./App.css"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   <>
   <div className="app">
-    <Bar/>
+    <Debugging onClickPanicButton={() => console.log("pepe")}/>
   </div>  
   </>
 

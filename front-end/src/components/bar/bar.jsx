@@ -7,8 +7,8 @@ const Bar = (...props) => {
 
             <div>
                 
-                <div/>
-                <p></p>
+                <div className="bar"/>
+                <p className=""></p>
 
             </div>
         
