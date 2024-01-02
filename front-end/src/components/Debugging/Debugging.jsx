@@ -46,8 +46,7 @@ const MousePosition = () => {
 
 const Debugging = ({onClickPanicButton}) => {
     
-
-    const [debuggingStyle,setDebuggingStyle] = useState({
+    const debuggingStyle = {
 
         display: "flex",
         flexDirection: "column",
@@ -58,7 +57,8 @@ const Debugging = ({onClickPanicButton}) => {
         width: "80px"
 
 
-    })
+    }
+
     
     const [elementosAOcultar,setElementosAOcultar] = useState ({
         display: "flex",

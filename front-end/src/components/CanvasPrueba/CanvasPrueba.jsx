@@ -1,41 +1,31 @@
 import { useRef,useEffect } from "react";
-import PanicButton from "../PanicButton/PanicButton";
+
 
 const CanvasPrueba = (props) => {
 
-    const canvasRef = useRef(null);
 
-    const elements = [];
+const canvasRef = useRef (null);
 
-    const draw = (...object) => {
+const backGround = (ctx) => {
+    let x = 5;
 
-        ctx.fillRect(object.x,object.y,object.width,object.height);
-
+    for (let i = 0; i < 25; i++) { 
+        ctx.fillRect(15,x,1000,1);
+        x = x + 5;
     }
+}
 
-    const canvasHandleClick = (event) => {
-        
-        const canvas = canvasRef.current;
-        const canvasLeft = canvas.offsetLeft + canvas.clientLeft;
-        const canvasTop = canvas.offsetTop + canvas.clientTop
-        
-        const x = event.pageX
+useEffect(() => {
 
-    }
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
 
-    useEffect(() => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        draw(context);
-
-
-    },[draw])
+    backGround(context);
+},[])
 
     return (
 
-        <canvas onClick={() => canvasHandleClick()} ref={canvasRef}/>
+        <canvas width={"250px"} height={"250px"} onClick={() => canvasHandleClick()} ref={canvasRef}/>
 
     )
 
