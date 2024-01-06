@@ -1,5 +1,5 @@
 import Debugging from "./components/Debugging/Debugging.jsx"
-import CanvasPrueba from "./components/CanvasPrueba/CanvasPrueba.jsx"
+import List from "./components/List/List.jsx"
 import "./App.css"
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
 
   <>
   <div className="app">
-    <Debugging onClickPanicButton={() => console.log("pepe")}/>
-    <CanvasPrueba/>
+    <Debugging onClickPanicButton={() => console.log(ratios)}/>
+    <List/> 
   </div>  
   </>
 

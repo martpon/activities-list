@@ -3,16 +3,27 @@ import { useRef,useEffect } from "react";
 
 const CanvasPrueba = (props) => {
 
-
 const canvasRef = useRef (null);
 
-const backGround = (ctx) => {
-    let x = 5;
 
-    for (let i = 0; i < 25; i++) { 
-        ctx.fillRect(15,x,1000,1);
-        x = x + 5;
+/*#genera el background de el grafico */
+const backGround = (ctx) => {
+    
+    let x = 0;
+    let width = 75;
+
+    for (let i = 0; i < 18; i++) { 
+        ctx.fillRect(15,x,width,1);
+        x = x + 35;
+        width = width + 192;
     }
+}
+
+const bars = (ctx,params) => {
+
+    ctx.fillStyle = "rgb(200,0,0)";
+    ctx.fillRect(10, 10, 55, 50);
+
 }
 
 useEffect(() => {
@@ -21,11 +32,12 @@ useEffect(() => {
     const context = canvas.getContext("2d");
 
     backGround(context);
+    // bars(context)
 },[])
 
     return (
 
-        <canvas width={"250px"} height={"250px"} onClick={() => canvasHandleClick()} ref={canvasRef}/>
+        <canvas width={ratios.width} height={ratios.heigth - 100} onClick={() => canvasHandleClick()} ref={canvasRef}/>
 
     )
 

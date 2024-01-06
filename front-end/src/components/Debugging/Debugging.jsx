@@ -61,14 +61,14 @@ const Debugging = ({onClickPanicButton}) => {
 
     
     const [elementosAOcultar,setElementosAOcultar] = useState ({
-        display: "flex",
+        display: "none",
         flexDirection: "column"});
 
     const buttonHandleClick = () => {
 
-       (elementosAOcultar.display === "flex")
-       ? setElementosAOcultar({...elementosAOcultar,display: "none"})
-       : setElementosAOcultar({...elementosAOcultar,display: "flex"})
+       (elementosAOcultar.display === "none")
+       ? setElementosAOcultar({...elementosAOcultar,display: "flex"})
+       : setElementosAOcultar({...elementosAOcultar,display: "none"})
         
     }
 

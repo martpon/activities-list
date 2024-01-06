@@ -1,0 +1,41 @@
+.list-all-container {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.listarticle-container {
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+
+}
+
+.none {
+
+    display: none;
+
+}
+
+.listpopup-container {
+    
+    height: 7vh;
+    width: 75vw;
+    margin-top: 5px;
+
+}
+
+.listtext-style {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.line-trough {
+
+    text-decoration: line-through;
+
+}
