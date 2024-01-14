@@ -22,7 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
 #dev bad practices
 
+todo-list.txt
 PanicButton

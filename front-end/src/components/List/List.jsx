@@ -1,5 +1,29 @@
 import { useState } from "react"
+import NewItemListButton from "../NewItemListButton/NewItemListButton.jsx"
 import "./List.css"
+
+const simulatedDatabase = {
+    "actividades": [
+      {
+        "id": 1,
+        "nombre_actividad": "Hacer ejercicio",
+        "fecha_cumplimiento": "2024-01-15",
+        "completada": false
+      },
+      {
+        "id": 2,
+        "nombre_actividad": "Leer un libro",
+        "fecha_cumplimiento": "2024-01-20",
+        "completada": true
+      },
+      {
+        "id": 3,
+        "nombre_actividad": "Preparar presentación",
+        "fecha_cumplimiento": "2024-01-18",
+        "completada": false
+      }
+    ]
+  }
 
 const ListArticlePopUp = ({ date,display}) => {
 
@@ -23,17 +47,11 @@ const ListArticle = ({ txt,check,date }) => {
     const [listarticlePopUp,setListarticlePopUp] = useState(false)
     const [state, setState] = useState(check);
 
-    const getDate = () => {
-
-        let date = new Date();
-
-        return `finalizado en ${date}`
-
-    }
+   
 
     const dateTxt = (!state)
         ? "cuando lo completes aqui aparecera la fecha"
-        : `${getDate()}`
+        : `${date}` /* cambiar el codigo para que tome el prop en un futuro */
 
     const styleTxt = (state)
         ? "listtext-style line-trough"
@@ -85,10 +103,18 @@ const List = (...props) => {
         <>
             <div className="list-all-container">
 
-                <ListArticle txt={"pepe se la come"} check={false} />
-                <ListArticle txt={"pepe se la come"} check={false} />
-                <ListArticle txt={"pepe se la come"} check={false} />
-                <ListArticle txt={"pepe se la come"} check={false} />
+                {simulatedDatabase.actividades.map((element) => {
+                        return (
+
+                            <ListArticle 
+                                id={element.id} 
+                                txt={element.nombre_actividad} 
+                                date={element.fecha_cumplimiento} 
+                                check={element.completada} />
+
+                        )
+                })}
+                <NewItemListButton/>
                 
             </div>
         </>
