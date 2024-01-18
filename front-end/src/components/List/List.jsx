@@ -1,6 +1,6 @@
 import { useState } from "react"
 import NewItemListButton from "../NewItemListButton/NewItemListButton.jsx"
-import "./List.css"
+import "../../style/List.css"
 
 const simulatedDatabase = {
     "actividades": [
