@@ -1,0 +1,26 @@
+.chronometer-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #DB9E9E;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+
+}
+
+.btn-grp {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    background-color: azure;
+    border-radius: 100px;
+}
